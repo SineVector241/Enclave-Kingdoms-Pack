@@ -1,0 +1,164 @@
+{
+    "InformationText": {
+        "$update_string": "§z",
+        "type": "stack_panel",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "size": [
+            "100%cm",
+            "100%c"
+        ],
+        "controls": [
+            {
+                "MainTextFrame": {
+                    "type": "panel",
+                    "size": [
+                        "100%c + 12px",
+                        "100%cm + 5px"
+                    ],
+                    "controls": [
+                        {
+                            "MainTextBackground": {
+                                "type": "image",
+                                "size": [
+                                    "100%c + 12px",
+                                    "100%cm + 5px"
+                                ],
+                                "texture": "textures/ui/hud_tip_text_background",
+                                "keep_ratio": false,
+                                "alpha": 0.55,
+                                "controls": [
+                                    {
+                                        "MainText": {
+                                            "type": "label",
+                                            "text": "#text",
+                                            "max_size": [
+                                                "150px",
+                                                "default"
+                                            ],
+                                            "controls": [
+                                                {
+                                                    "data_control": {
+                                                        "type": "panel",
+                                                        "bindings": [
+                                                            {
+                                                                "binding_name": "#hud_title_text_string" // reads in the current title string
+                                                            },
+                                                            {
+                                                                "binding_name": "#hud_title_text_string",
+                                                                "binding_name_override": "#preserved_text", // updates #preserved_text when visibility of this element changes
+                                                                "binding_condition": "visibility_changed"
+                                                            },
+                                                            // element becomes visible then immediately turns invisible when a title containing the update string is passed
+                                                            {
+                                                                "binding_type": "view",
+                                                                "source_property_name": "(not (#hud_title_text_string = #preserved_text) and not ((#hud_title_text_string - $update_string) = #hud_title_text_string))",
+                                                                "target_property_name": "#visible"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "bindings": [
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_control_name": "data_control", // reads bindings from the "data_control" child element
+                                                    "resolve_sibling_scope": true, // required if "data_control" is a sibling of the element that pulls the binding 
+                                                    "source_property_name": "(#preserved_text - $update_string)", // remove string update text from the text to be displayed
+                                                    "target_property_name": "#text"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "SubtitleTextFrame": {
+                    "type": "panel",
+                    "size": [
+                        "100%c + 12px",
+                        "100%cm + 5px"
+                    ],
+                    "controls": [
+                        {
+                            "SubtitleTextBackground": {
+                                "type": "image",
+                                "size": [
+                                    "100%c + 12px",
+                                    "100%cm + 5px"
+                                ],
+                                "texture": "textures/ui/hud_tip_text_background",
+                                "keep_ratio": false,
+                                "alpha": 0.55,
+                                "controls": [
+                                    {
+                                        "SubtitleText": {
+                                            "type": "label",
+                                            "text": "#text",
+                                            "max_size": [
+                                                "150px",
+                                                "default"
+                                            ],
+                                            "controls": [
+                                                {
+                                                    "data_control": {
+                                                        "type": "panel",
+                                                        "bindings": [
+                                                            {
+                                                                "binding_name": "#hud_subtitle_text_string" // reads in the current title string
+                                                            },
+                                                            {
+                                                                "binding_name": "#hud_subtitle_text_string",
+                                                                "binding_name_override": "#preserved_text", // updates #preserved_text when visibility of this element changes
+                                                                "binding_condition": "visibility_changed"
+                                                            },
+                                                            // element becomes visible then immediately turns invisible when a title containing the update string is passed
+                                                            {
+                                                                "binding_type": "view",
+                                                                "source_property_name": "(not (#hud_subtitle_text_string = #preserved_text) and not ((#hud_subtitle_text_string - $update_string) = #hud_subtitle_text_string))",
+                                                                "target_property_name": "#visible"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "bindings": [
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_control_name": "data_control", // reads bindings from the "data_control" child element
+                                                    "resolve_sibling_scope": true, // required if "data_control" is a sibling of the element that pulls the binding 
+                                                    "source_property_name": "(#preserved_text - $update_string)", // remove string update text from the text to be displayed
+                                                    "target_property_name": "#text"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "hud_title_text": {
+        "ignored": true
+    },
+    "root_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "InformationText@hud.InformationText": {}
+                    }
+                ]
+            }
+        ]
+    }
+}

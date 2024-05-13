@@ -1,0 +1,7 @@
+{
+  "namespace": "settings_common",
+  
+  "settings_content/background": {
+    "color": [ 0.32, 0.29, 0.23 ] //0.08, 0.07, 0.05 and 0.32, 0.29, 0.23
+  }
+  }

@@ -1,0 +1,5 @@
+pack.name=Enclave Pack RP
+pack.description=Enclave Pack
+tile.enclave:night_torch.name=Night Torch
+item.enclave:coin=Coin
+item.enclave:test=Test

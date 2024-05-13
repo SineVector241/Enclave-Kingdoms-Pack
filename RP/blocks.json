@@ -1,0 +1,11 @@
+{
+	"format_version": [
+		1,
+		1,
+		0
+	],
+	"enclave:night_torch": {
+		"textures": "redstone_torch_off",
+		"sound": "wood"
+	}
+}

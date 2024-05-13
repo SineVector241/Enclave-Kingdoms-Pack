@@ -1,0 +1,24 @@
+{
+    "selected_item_details": {
+        "alpha": 0.5,
+        "propagate_alpha": true
+    }
+}
+/*{
+        "selected_item_details/item_panel_image/item_text_label": {
+            "text": "#selected_hover_text_changed",
+            "color": [
+                0.87,
+                0.0,
+                1.0
+            ],
+            "bindings": [
+                {
+                    "binding_type": "view",
+                    "source_property_name": "(#selected_hover_text - '§f')",
+                    "target_property_name": "#selected_hover_text_changed"
+                }
+            ]
+        }
+    }
+}*/

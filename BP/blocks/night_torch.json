@@ -1,0 +1,60 @@
+{
+	"format_version": "1.19.50",
+	"minecraft:block": {
+		"description": {
+			"identifier": "enclave:night_torch",
+			"menu_category": {
+				"category": "items",
+				"group": "none",
+				"is_hidden_in_commands": false
+			}
+		},
+		"components": {
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "redstone_torch_off",
+					"render_method": "alpha_test",
+					"ambient_occlusion": false,
+					"face_dimming": true
+				}
+			},
+			"minecraft:geometry": "geometry.night_torch",
+			"minecraft:collision_box": false,
+			"minecraft:selection_box": {
+				"origin": [
+					-1.5,
+					0,
+					-1.5
+				],
+				"size": [
+					3,
+					10.5,
+					3
+				]
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 2
+			},
+			"minecraft:queued_ticking": {
+				"looping": true,
+				"interval_range": [
+					10,
+					10
+				],
+				"on_tick": {
+					"event": "enclave:execute_event",
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"enclave:execute_event": {
+				"run_command": {
+					"command": [
+						"effect @a[r=20,tag=kam] invisibility 5 1 true"
+					]
+				}
+			}
+		}
+	}
+}

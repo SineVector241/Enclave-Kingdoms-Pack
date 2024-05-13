@@ -1,0 +1,12 @@
+{
+	"resource_pack_name": "Enclave Pack",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"enclave_coin": {
+			"textures": "textures/items/coin"
+		},
+		"enclave_test": {
+			"textures": "textures/items/test"
+		}
+	}
+}

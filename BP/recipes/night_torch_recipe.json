@@ -1,0 +1,27 @@
+{
+	"format_version": "1.20.0",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "enclave:night_torch"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"X",
+			"#"
+		],
+		"key": {
+			"#": {
+				"item": "minecraft:stick"
+			},
+			"X": {
+				"item": "minecraft:glowstone_dust"
+			}
+		},
+		"result": {
+			"item": "enclave:night_torch",
+			"count": 4
+		}
+	}
+}
