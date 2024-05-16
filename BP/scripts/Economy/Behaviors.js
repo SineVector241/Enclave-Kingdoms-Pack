@@ -4,9 +4,6 @@ import { EconomyScoreboard } from './Scoreboard.js';
 const CoinId = "enclave:coin";
 
 world.afterEvents.entityDie.subscribe(ev => {
-    var isPassive = !ev.deadEntity.getComponent(EntityComponentTypes.TypeFamily)?.hasTypeFamily("monster") ?? false;
-    if (isPassive) return;
-
     if (ev.deadEntity.typeId === "minecraft:player") {
         var score = EconomyScoreboard.GetOrAddScore(ev.deadEntity);
         if (score >= 25) {
@@ -16,6 +13,9 @@ world.afterEvents.entityDie.subscribe(ev => {
     }
     else {
         try {
+	    var isPassive = !ev.deadEntity.getComponent(EntityComponentTypes.TypeFamily)?.hasTypeFamily("monster") ?? false;
+            if (isPassive) return;
+
             ev.deadEntity.dimension.spawnItem(new ItemStack(CoinId, 1), ev.deadEntity.location);
         }
         catch { }
