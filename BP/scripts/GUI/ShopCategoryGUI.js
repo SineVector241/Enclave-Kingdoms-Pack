@@ -13,7 +13,7 @@ class ShopCategoryGUI {
             .title(category.Name);
 
         for (let i = 0; i < category.Items.length; i++) {
-            ui.button(category.Items[i].Name, category.Items[i].Icon);
+            ui.button(`${category.Items[i].Name} - \$${category.Items[i].Cost}`, category.Items[i].Icon);
         }
 
         ui.show(player).then(ev => {

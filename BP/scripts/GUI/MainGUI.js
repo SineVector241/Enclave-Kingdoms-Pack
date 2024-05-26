@@ -1,15 +1,17 @@
 import { world, system, Player } from '@minecraft/server';
 import { ActionFormData } from '@minecraft/server-ui';
 import { HomesGUI } from './HomesGUI.js';
+import { ShopGUI } from './ShopGUI.js';
 import { Vec3 } from "../vec3.js";
 
-const spawn = new Vec3(360, 72, 690);
+const spawn = new Vec3(84, 64, 104);
 const Cooldown = 1000 * 60 * 5;//time between warps that must be waited
 
 const UI = new ActionFormData()
     .title("Main")
     .button("Spawn")
-    .button("Homes");
+    .button("Homes")
+    .button("Shop");
 
 class MainGUI {
     /**
@@ -34,6 +36,8 @@ class MainGUI {
                 case 1:
                     HomesGUI.show(player);
                     break;
+                case 2:
+                    ShopGUI.show(player);
             }
         });
     }

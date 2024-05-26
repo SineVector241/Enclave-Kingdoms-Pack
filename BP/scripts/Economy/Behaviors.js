@@ -13,7 +13,7 @@ world.afterEvents.entityDie.subscribe(ev => {
     }
     else {
         try {
-	    var isPassive = !ev.deadEntity.getComponent(EntityComponentTypes.TypeFamily)?.hasTypeFamily("monster") ?? false;
+            var isPassive = !ev.deadEntity.getComponent(EntityComponentTypes.TypeFamily)?.hasTypeFamily("monster") ?? false;
             if (isPassive) return;
 
             ev.deadEntity.dimension.spawnItem(new ItemStack(CoinId, 1), ev.deadEntity.location);
