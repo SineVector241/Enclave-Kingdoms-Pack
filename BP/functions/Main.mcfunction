@@ -3,12 +3,15 @@ execute as @a[tag=leg] at @s run titleraw @s subtitle {"rawtext":[{"text":"§z§
 execute as @a[tag=kam] at @s run titleraw @s subtitle {"rawtext":[{"text":"§z§6Kamereons\n§aOnline Members: \n§p"}, {"selector":"@a[tag=kam]"}]}
 execute as @a[tag=mer] at @s run titleraw @s subtitle {"rawtext":[{"text":"§z§2Mercenaries\n§aOnline Members: \n§p"}, {"selector":"@a[tag=mer]"}]}
 execute as @a[tag=war] at @s run titleraw @s subtitle {"rawtext":[{"text":"§z§4Warriors\n§aOnline Members: \n§p"}, {"selector":"@a[tag=war]"}]}
-tp @a[x=84,y=64,z=104,rm=5000] 84 64 104
+tp @a[x=84,y=64,z=104,rm=5000, tag=!admin] 84 64 104
 
 gamemode a @a[x=84,y=64,z=104,r=50,m=!a,tag=!admin]
 title @a[x=84,y=64,z=104,r=50] subtitle §z§6You are currently in spawn!
 tp @e[family=monster,x=84,y=64,z=104,r=50] 0 0 0
 effect @a[x=84,y=64,z=104,r=50] weakness 1 255 true
+effect @a[x=84,y=64,z=104,r=50] resistance 1 255 true
+effect @a[x=84,y=64,z=104,r=50] fire_resistance 1 255 true
+effect @a[x=84,y=64,z=104,r=50] regeneration 1 255 true
 gamemode s @a[x=84,y=64,z=104,rm=51,m=!s,tag=!admin]
 title @a[x=84,y=64,z=104,rm=51] subtitle §z§aYou are no longer in spawn!
 
