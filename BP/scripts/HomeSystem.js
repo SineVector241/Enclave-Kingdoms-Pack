@@ -1,23 +1,25 @@
 import { Dimension, world } from '@minecraft/server';
 import { Vec3 } from "./vec3.js";
 
+const NumberOfHomes = 2;
+
 class HomeSystem {
-    static hasHome(/**@type Player */ player) {
-        return (player.getDynamicProperty("enclave:home") ? true : false);
+    static hasHome(/**@type Player */ player, home) {
+        return (player.getDynamicProperty(`enclave:home${home}`) ? true : false);
     }
-    static setHome(/**@type Player */ player) {
-        this.setHomeAt(player, player.dimension, player.location);
+    static setHome(/**@type Player */ player, home) {
+        this.setHomeAt(player, home, player.dimension, player.location);
     }
-    static setHomeAt(/**@type Player */ player, /**@type Dimension */ dimension, /**@type Vec3 */ position) {
+    static setHomeAt(/**@type Player */ player, home, /**@type Dimension */ dimension, /**@type Vec3 */ position) {
         try {
-            player.setDynamicProperty("enclave:home", JSON.stringify([dimension.id, position.x, position.y, position.z]));
+            player.setDynamicProperty(`enclave:home${home}`, JSON.stringify([dimension.id, position.x, position.y, position.z]));
         } catch (e) {
             console.warn("JSON stringification of home failed.")
             console.warn(e);
         }
     }
-    static getHomePosition(/**@type Player */player) {
-        let pos = player.getDynamicProperty("enclave:home")
+    static getHomePosition(/**@type Player */player, home) {
+        let pos = player.getDynamicProperty(`enclave:home${home}`)
         if (pos) {
             try {
                 pos = JSON.parse(pos);
@@ -30,8 +32,8 @@ class HomeSystem {
 
         return pos;
     }
-    static warpHome(/**@type Player */ player) {
-        let home = this.getHomePosition(player);
+    static warpHome(/**@type Player */ player, home) {
+        let home = this.getHomePosition(player,home);
         if (!home) return false;
         try {
             let dimension = home.shift();
@@ -45,4 +47,4 @@ class HomeSystem {
     }
 }
 
-export { HomeSystem }
+export { HomeSystem, NumberOfHomes }
