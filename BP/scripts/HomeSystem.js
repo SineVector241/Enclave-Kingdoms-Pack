@@ -12,7 +12,7 @@ class HomeSystem {
     }
     static setHomeAt(/**@type Player */ player, home, /**@type Dimension */ dimension, /**@type Vec3 */ position) {
         try {
-            player.setDynamicProperty(`enclave:home${home}`, JSON.stringify([dimension.id, position.x, position.y, position.z]));
+            player.setDynamicProperty(`enclave:home${home === 1 ? "" : home}`, JSON.stringify([dimension.id, position.x, position.y, position.z]));
         } catch (e) {
             console.warn("JSON stringification of home failed.")
             console.warn(e);
