@@ -5,7 +5,7 @@ const NumberOfHomes = 2;
 
 class HomeSystem {
     static hasHome(/**@type Player */ player, home) {
-        return (player.getDynamicProperty(`enclave:home${home}`) ? true : false);
+        return (player.getDynamicProperty(`enclave:home${home === 1 ? "" : home}`) ? true : false);
     }
     static setHome(/**@type Player */ player, home) {
         this.setHomeAt(player, home, player.dimension, player.location);
@@ -19,7 +19,7 @@ class HomeSystem {
         }
     }
     static getHomePosition(/**@type Player */player, home) {
-        let pos = player.getDynamicProperty(`enclave:home${home}`)
+        let pos = player.getDynamicProperty(`enclave:home${home === 1 ? "" : home}`)
         if (pos) {
             try {
                 pos = JSON.parse(pos);
