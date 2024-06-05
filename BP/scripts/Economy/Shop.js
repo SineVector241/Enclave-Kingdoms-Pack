@@ -23,7 +23,7 @@ class Shop {
 
             new ShopCategory("Blocks", [
                 new ShopItem("Dirt", "minecraft:dirt", 1),
-                new ShopItem("Grass", "minecraft:grass", 4),
+                new ShopItem("Grass", "minecraft:grass_block", 4),
                 new ShopItem("Cobblestone", "minecraft:cobblestone", 1),
                 new ShopItem("Stone", "minecraft:stone", 2),
                 new ShopItem("Gravel", "minecraft:gravel", 3),
