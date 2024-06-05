@@ -28,15 +28,20 @@ class ShopItemGUI {
                     return;
                 }
 
-                const sourceAmount = EconomyScoreboard.GetOrAddScore(player);
-                if (sourceAmount < value * item.Cost) {
-                    player.sendMessage("§cYou do not have the sufficient funds to make the purchase!");
-                    return;
-                }
+                try {
+                    const sourceAmount = EconomyScoreboard.GetOrAddScore(player);
+                    if (sourceAmount < value * item.Cost) {
+                        player.sendMessage("§cYou do not have the sufficient funds to make the purchase!");
+                        return;
+                    }
 
-                EconomyScoreboard.ReduceScore(player, value * item.Cost);
-                player.getComponent(EntityComponentTypes.Inventory).container.addItem(new ItemStack(item.Identifier, value));
-                player.sendMessage(`§aSuccessfully bought ${value} ${item.Name}'s for \$${item.Cost * value}.`);
+                    player.getComponent(EntityComponentTypes.Inventory).container.addItem(new ItemStack(item.Identifier, value));
+                    EconomyScoreboard.ReduceScore(player, value * item.Cost);
+                    player.sendMessage(`§aSuccessfully bought ${value} ${item.Name}'s for \$${item.Cost * value}.`);
+                }
+                catch (ex) {
+                    player.sendMessage(`§cAn error occurred: ${ex}`);
+                }
             });
         });
     }
