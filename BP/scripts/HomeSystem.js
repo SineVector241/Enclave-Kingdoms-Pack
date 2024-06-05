@@ -33,7 +33,7 @@ class HomeSystem {
         return pos;
     }
     static warpHome(/**@type Player */ player, home) {
-        let home = this.getHomePosition(player,home);
+        home = this.getHomePosition(player,home);
         if (!home) return false;
         try {
             let dimension = home.shift();
