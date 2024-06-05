@@ -13,6 +13,11 @@ const UI = new ActionFormData()
     .button("Homes")
     .button("Shop");
 
+const confirm = new ActionFormData()
+  .title("§2Confirmation")
+  .button("No", "textures/ui/cancel")
+  .button("Yes", "textures/ui/check");
+
 class MainGUI {
     /**
      * @argument {Player} player
@@ -22,21 +27,27 @@ class MainGUI {
             if (x.canceled) return;
 
             switch (x.selection) {
-                case 0:
+                case 0://Spawn
                     const lastWarped = player.getDynamicProperty("enclave:lastWarpped") || 0;
                     const rightNow = new Date().getTime();
                     if (lastWarped + Cooldown < rightNow) {
-                        player.teleport(spawn, { dimension: world.getDimension("minecraft:overworld") });
-                        player.setDynamicProperty("enclave:lastWarpped", rightNow)
-                    }
+                        confirm.body("Are you sure you want to warp to Spawn").then((ev)=>{
+                            if(ev.canceled)return;
+                            if(ev.selection === 1) {
+                                player.teleport(spawn, { dimension: world.getDimension("minecraft:overworld") });
+                                player.setDynamicProperty("enclave:lastWarpped", rightNow)
+                            }
+                        }
+                    })
                     else {
                         player.sendMessage(`§cYou must wait ${Math.floor((lastWarped + Cooldown - rightNow) / 1000)} seconds before warping again.`);
                     };
+                    
                     break;
-                case 1:
+                case 1://Homes
                     HomesGUI.show(player);
                     break;
-                case 2:
+                case 2://Shop
                     ShopGUI.show(player);
             }
         });
