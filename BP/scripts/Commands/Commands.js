@@ -1,6 +1,20 @@
-import { world } from '@minecraft/server';
+import { world, system } from '@minecraft/server';
 import { CommandSystem } from './CommandSystem.js';
 import { EconomyScoreboard } from '../Economy/Scoreboard.js';
+
+
+//Track the TPS
+let TPS = 0;
+const previousTick = new Date.getTime();
+system.runInterval(()=>{
+    const now = new Date.getTime();
+    TPS = 2000/(now - previousTick);
+    previousTick = now;
+}, 20);
+
+CommandSystem.RegisterCommand("tps", (ev => {
+    ev.source.sendMessage(`The TPS is ${TPS}.`);
+});
 
 CommandSystem.RegisterCommand("transfer", (ev => {
     if (ev.amount < 0) {
