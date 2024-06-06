@@ -15,6 +15,7 @@ const UI = new ActionFormData()
 
 const confirm = new ActionFormData()
   .title("§2Confirmation")
+  .body("Are you sure you want to warp to spawn?")
   .button("No", "textures/ui/cancel")
   .button("Yes", "textures/ui/check");
 
@@ -31,7 +32,7 @@ class MainGUI {
                     const lastWarped = player.getDynamicProperty("enclave:lastWarpped") || 0;
                     const rightNow = new Date().getTime();
                     if (lastWarped + Cooldown < rightNow) {
-                        confirm.show("Are you sure you want to warp to spawn?").then( (ev) =>{
+                        confirm.show(player).then( (ev) =>{
                             if(ev.canceled)return;
                             if(ev.selection === 1) {
                                 player.teleport(spawn, { dimension: world.getDimension("minecraft:overworld") });
