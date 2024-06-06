@@ -31,18 +31,17 @@ class MainGUI {
                     const lastWarped = player.getDynamicProperty("enclave:lastWarpped") || 0;
                     const rightNow = new Date().getTime();
                     if (lastWarped + Cooldown < rightNow) {
-                        confirm.body("Are you sure you want to warp to Spawn").then((ev)=>{
+                        confirm.body("Are you sure you want to warp to spawn?").then( (ev) =>{
                             if(ev.canceled)return;
                             if(ev.selection === 1) {
                                 player.teleport(spawn, { dimension: world.getDimension("minecraft:overworld") });
-                                player.setDynamicProperty("enclave:lastWarpped", rightNow)
+                                player.setDynamicProperty("enclave:lastWarpped", rightNow);
                             }
-                        }
-                    })
+                        });
+                    }
                     else {
                         player.sendMessage(`§cYou must wait ${Math.floor((lastWarped + Cooldown - rightNow) / 1000)} seconds before warping again.`);
                     };
-                    
                     break;
                 case 1://Homes
                     HomesGUI.show(player);
