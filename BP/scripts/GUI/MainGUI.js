@@ -31,7 +31,7 @@ class MainGUI {
                     const lastWarped = player.getDynamicProperty("enclave:lastWarpped") || 0;
                     const rightNow = new Date().getTime();
                     if (lastWarped + Cooldown < rightNow) {
-                        confirm.body("Are you sure you want to warp to spawn?").then( (ev) =>{
+                        confirm.show("Are you sure you want to warp to spawn?").then( (ev) =>{
                             if(ev.canceled)return;
                             if(ev.selection === 1) {
                                 player.teleport(spawn, { dimension: world.getDimension("minecraft:overworld") });
