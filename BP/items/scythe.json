@@ -1,0 +1,48 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "enclave:scythe",
+			"category": "equipment"
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "enclave_scythe"
+			},
+			"minecraft:hand_equipped": true,
+			"minecraft:max_stack_size": 1,
+			"minecraft:use_animation": "brush",
+			"minecraft:interact_button": true,
+			"minecraft:render_offsets": {
+				"main_hand": {
+					"first_person": {
+						"position": [
+							0.5,
+							0,
+							-1.2
+						]
+					},
+					"third_person": {
+						"position": [
+							0.2,
+							1.8,
+							-0.5
+						]
+					}
+				}
+			},
+			"minecraft:display_name": {
+				"value": "Supremium Scythe"
+			},
+			"minecraft:on_use_on": {
+				"on_use_on": {
+					"event": "enclave:use",
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"enclave:use": {}
+		}
+	}
+}
