@@ -1,0 +1,30 @@
+{
+	"format_version": "",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "enclave:supremiumscythe"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"##@",
+			"#*#",
+			"%##"
+		],
+		"key": {
+			"%": {
+				"item": "stick"
+			},
+			"*": {
+				"item": "strat:supremium_ingot"
+			},
+			"@": {
+				"item": "strat:supremium_hoe"
+			}
+		},
+		"result": {
+			"item": "enclave:scythe"
+		}
+	}
+}
