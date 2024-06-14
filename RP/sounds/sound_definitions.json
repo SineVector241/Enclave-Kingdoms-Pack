@@ -1,4 +1,18 @@
 {
 	"format_version": "1.14.0",
-	"sound_definitions": {}
+	"sound_definitions": {
+		"enclave:metal_pipe":{
+            "category": "ui",
+            "max_distance": 24,
+            "sounds": [
+                {
+                    "is3D": true,
+                    "name": "sounds/metal_pipe",
+                    "pitch": 1,
+                    "volume": 1,
+                    "weight": 3
+                }
+            ]
+         }
+	}
 }

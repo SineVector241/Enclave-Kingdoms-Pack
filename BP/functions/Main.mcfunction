@@ -20,3 +20,6 @@ title @a[x=84,y=64,z=104,rm=51,r=54] subtitle §z§aYou are no longer in spawn!
 execute at @a run fill ~-8 ~-4 ~-8 ~8 ~12 ~8 diamond_block replace mob_spawner
 clear @a empty_map
 clear @a filled_map
+
+playsound enclave:metal_pipe @a[hasitem={item=enclave:metal_pipe}]
+#clear @a enclave:metal_pipe

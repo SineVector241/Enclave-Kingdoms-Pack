@@ -7,6 +7,9 @@
 		},
 		"enclave_test": {
 			"textures": "textures/items/test"
-		}
+		},
+		"metal_pipe": {
+			"textures": ["textures/items/metal_pipe"]
+		  }
 	}
 }
