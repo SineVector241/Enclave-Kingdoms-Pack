@@ -3,3 +3,4 @@ pack.description=Enclave Pack
 tile.enclave:night_torch.name=Night Torch
 item.enclave:coin=Coin
 item.enclave:test=Test
+item.enclave:metal_pipe=Metal Pipe
