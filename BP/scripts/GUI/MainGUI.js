@@ -4,7 +4,7 @@ import { HomesGUI } from './HomesGUI.js';
 import { ShopGUI } from './ShopGUI.js';
 import { Vec3 } from "../vec3.js";
 
-const spawn = new Vec3(84, 64, 104);
+const spawn = new Vec3(88, 69, 131);
 const Cooldown = 1000 * 60 * 5;//time between warps that must be waited
 
 const UI = new ActionFormData()
