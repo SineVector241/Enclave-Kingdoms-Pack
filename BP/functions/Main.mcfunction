@@ -22,4 +22,4 @@ clear @a empty_map
 clear @a filled_map
 
 playsound enclave:metal_pipe @a[hasitem={item=enclave:metal_pipe}]
-#clear @a enclave:metal_pipe
+clear @a enclave:metal_pipe
