@@ -1,0 +1,37 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "enclave:tertiumscythe"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"#$@",
+			"#*#",
+			"%##"
+		],
+		"key": {
+			"%": {
+				"item": "stick"
+			},
+			"*": {
+				"item": "strat:tertium_ingot"
+			},
+			"@": {
+				"item": "enclave:prudentium_scythe"
+			},
+			"$": {
+				"item": "strat:tertium_gemstone"
+			}
+		},
+		"result": {
+			"item": "enclave:tertium_scythe"
+		},
+		"unlock": {
+			"context": "AlwaysUnlocked"
+		},
+		"priority": 1
+	}
+}

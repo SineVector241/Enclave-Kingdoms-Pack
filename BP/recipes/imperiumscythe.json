@@ -1,0 +1,37 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "enclave:imperiumscythe"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"#$@",
+			"#*#",
+			"%##"
+		],
+		"key": {
+			"%": {
+				"item": "stick"
+			},
+			"*": {
+				"item": "strat:imperium_ingot"
+			},
+			"@": {
+				"item": "enclave:tertium_scythe"
+			},
+			"$": {
+				"item": "strat:imperium_gemstone"
+			}
+		},
+		"result": {
+			"item": "enclave:imperium_scythe"
+		},
+		"unlock": {
+			"context": "AlwaysUnlocked"
+		},
+		"priority": 1
+	}
+}
