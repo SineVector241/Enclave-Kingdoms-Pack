@@ -1,0 +1,37 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "enclave:prudentiumscythe"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"#$@",
+			"#*#",
+			"%##"
+		],
+		"key": {
+			"%": {
+				"item": "stick"
+			},
+			"*": {
+				"item": "strat:prudentium_ingot"
+			},
+			"@": {
+				"item": "enclave:inferium_scythe"
+			},
+			"$": {
+				"item": "strat:prudentium_gemstone"
+			}
+		},
+		"result": {
+			"item": "enclave:prudentium_scythe"
+		},
+		"unlock": {
+			"context": "AlwaysUnlocked"
+		},
+		"priority": 1
+	}
+}

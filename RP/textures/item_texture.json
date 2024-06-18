@@ -9,7 +9,24 @@
 			"textures": "textures/items/test"
 		},
 		"metal_pipe": {
-			"textures": ["textures/items/metal_pipe"]
-		  }
+			"textures": [
+				"textures/items/metal_pipe"
+			]
+		},
+		"enclave_scythe": {
+			"textures": "textures/items/supremium_scythe"
+		},
+		"enclave_inferium_scythe": {
+			"textures": "textures/items/inferium_scythe"
+		},
+		"enclave_prudentium_scythe": {
+			"textures": "textures/items/prudentium_scythe"
+		},
+		"enclave_tertium_scythe": {
+			"textures": "textures/items/tertium_scythe"
+		},
+		"enclave_imperium_scythe": {
+			"textures": "textures/items/imperium_scythe"
+		}
 	}
 }

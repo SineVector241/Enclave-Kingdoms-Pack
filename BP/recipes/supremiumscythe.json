@@ -1,0 +1,37 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "enclave:supremiumscythe"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"#$@",
+			"#*#",
+			"%##"
+		],
+		"key": {
+			"%": {
+				"item": "stick"
+			},
+			"*": {
+				"item": "strat:supremium_ingot"
+			},
+			"@": {
+				"item": "enclave:imperium_scythe"
+			},
+			"$": {
+				"item": "strat:supremium_gemstone"
+			}
+		},
+		"result": {
+			"item": "enclave:supremium_scythe"
+		},
+		"unlock": {
+			"context": "AlwaysUnlocked"
+		},
+		"priority": 1
+	}
+}
