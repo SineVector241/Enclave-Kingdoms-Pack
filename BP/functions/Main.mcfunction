@@ -6,6 +6,8 @@ execute as @a[tag=war] at @s run titleraw @s subtitle {"rawtext":[{"text":"§z§
 tp @a[x=88,y=69,z=131,rm=5000, tag=!admin] 88 69 131
 title @a[x=88,y=69,z=131,rm=4800] actionbar §4You are near the world border!
 
+execute as @e [type=slime] at @s if block ~ ~-1 ~ farmland run scriptevent enclave:despawn
+
 gamemode a @a[x=88,y=69,z=131,r=50,m=!a,tag=!admin]
 title @a[x=88,y=69,z=131,r=50] subtitle §z§6You are currently in spawn!
 tp @e[family=monster,x=88,y=69,z=131,r=50] 0 0 0
