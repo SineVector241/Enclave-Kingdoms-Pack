@@ -36,15 +36,6 @@
 					}
 				]
 			}
-		},
-		"events": {
-			"on_tool_used": {
-				"damage": {
-					"target": "self",
-					"amount": 1,
-					"type": "none"
-				}
-			}
 		}
 	}
 }

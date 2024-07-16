@@ -5,11 +5,11 @@
 			"identifier": "enclave:night_torch",
 			"menu_category": {
 				"category": "items",
-				"group": "none",
 				"is_hidden_in_commands": false
 			}
 		},
 		"components": {
+			"minecraft:custom_components": ["enclave:kam_buff"],
 			"minecraft:material_instances": {
 				"*": {
 					"texture": "redstone_torch_off",
@@ -35,25 +35,9 @@
 			"minecraft:destructible_by_mining": {
 				"seconds_to_destroy": 2
 			},
-			"minecraft:queued_ticking": {
-				"looping": true,
-				"interval_range": [
-					10,
-					10
-				],
-				"on_tick": {
-					"event": "enclave:execute_event",
-					"target": "self"
-				}
-			}
-		},
-		"events": {
-			"enclave:execute_event": {
-				"run_command": {
-					"command": [
-						"effect @a[r=20,tag=kam] invisibility 5 1 true"
-					]
-				}
+			"minecraft:tick": {
+				"interval_range": [10,10],
+				"looping": true
 			}
 		}
 	}

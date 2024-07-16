@@ -28,6 +28,7 @@ world.afterEvents.playerSpawn.subscribe(ev => {
     }
 });
 
+
 system.runInterval(() => {
     const players = world.getAllPlayers();
     for (let i = 0; i < players.length; i++) {

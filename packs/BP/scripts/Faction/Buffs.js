@@ -45,9 +45,10 @@ function ApplyLegionBuffs(player) {
  */
 function ApplyKamereonBuffs(player) {
     var timeOfDay = world.getTimeOfDay();
-    if (player.dimension.id == MinecraftDimensionTypes.overworld && timeOfDay > 13000 && timeOfDay < 23000) {
+    if (player.dimension.id == MinecraftDimensionTypes.overworld && timeOfDay > 13000 && timeOfDay < 23000 || player.dimension.id == MinecraftDimensionTypes.theEnd) {
         player.addEffect("speed", 100, { amplifier: 0, showParticles: false });
         player.addEffect("night_vision", 220, { amplifier: 0, showParticles: false });
+        player.addEffect("resistance", 100, { amplifier: 0, showParticles: false });
 
         if (player.isSneaking) {
             player.addEffect("invisibility", 100, { amplifier: 0, showParticles: false });
